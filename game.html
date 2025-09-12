@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shadow Scholl - Jogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Ajusta o corpo para ocupar 100% da altura e remove margens */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita barras de rolagem indesejadas */
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;   /* Ocupa 100% da largura da viewport */
+            height: 100vh;  /* Ocupa 100% da altura da viewport */
+            background-color: var(--background-color);
+            padding: 0; /* Removido qualquer padding */
+            box-sizing: border-box; /* Garante que padding e border sejam incluídos no width/height */
+        }
+
+        .game-frame {
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-color);
+            flex-grow: 1; /* Permite que o frame cresça para preencher o espaço */
+            max-width: 100%; /* Garante que não ultrapasse a largura do container */
+            max-height: 100%; /* Garante que não ultrapasse a altura do container */
+            display: flex; /* Para centralizar o iframe dentro dele */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .responsive-game {
+            position: relative;
+            width: 100%;
+            height: 100%; /* Ajuste para tentar preencher a altura */
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .responsive-game iframe {
+            display: block; /* Para evitar espaçamento extra */
+            width: 100%;
+            height: 100%;
+            /* Object-fit para garantir que a proporção seja mantida sem distorção */
+            object-fit: contain; /* Enquadra o conteúdo mantendo a proporção */
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="responsive-game game-frame">
+            <iframe src="https://scratch.mit.edu/projects/1216177356/embed" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div>
+    </div>
+</body>
+</html>
